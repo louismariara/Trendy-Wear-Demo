@@ -1,0 +1,14 @@
+# Node/modules (if any future dependencies)
+node_modules/
+
+# OS/files
+.DS_Store
+Thumbs.db
+
+# Editor temp
+.vscode/
+*.swp
+*.swo
+
+# Sass cache
+.sass-cache/
