@@ -12,3 +12,7 @@ Thumbs.db
 
 # Sass cache
 .sass-cache/
+
+# Logs
+logs/
+*.log
