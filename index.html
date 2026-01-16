@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<title>Trendy Wear - Free Bootstrap 4 Template by Colorlib</title>
+	<title>Trendy Wear</title>
+
+
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -34,7 +35,104 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+		<style>
+			/* Dark theme base */
+			body { background: #111111; color: #ffffff; font-family: 'Montserrat', sans-serif; }
+			#page { background: #111111; }
 
+			/* Black header */
+			.colorlib-nav .top-menu { background: #000000; }
+			.colorlib-nav .menu-1 ul li a { color: #ffffff; }
+			.colorlib-nav .menu-1 ul li.active a { color: #e74c3c; }
+			.colorlib-nav .menu-1 ul li.has-dropdown:hover > a { color: #e74c3c; }
+			#colorlib-logo a { color: #ffffff; font-family: 'Dancing Script', cursive; font-size: 28px; font-weight: 700; }
+
+			/* Red buttons */
+			.btn-primary {
+				background: #e74c3c;
+				border-color: #e74c3c;
+				color: #ffffff;
+			}
+			.btn-primary:hover {
+				background: #c0392b;
+				border-color: #c0392b;
+			}
+
+			/* Sale bar */
+			.sale { background: #000000; }
+			.sale h3 a { color: #e74c3c; }
+
+			/* Red links */
+			a { color: #e74c3c; }
+			a:hover { color: #ffffff; }
+
+			/* All text below hero - high contrast */
+			.colorlib-intro, .colorlib-product, .colorlib-featured, .colorlib-partner, #colorlib-footer {
+				color: #ffffff;
+			}
+			.colorlib-intro .intro { color: #ffffff; font-size: 18px; }  /* Intro paragraph */
+			.colorlib-heading h2 { color: #e74c3c; font-family: 'Dancing Script', cursive; font-weight: 600; }  /* Best Sellers, etc. */
+			.desc h2 a { color: #ffffff; font-family: 'Montserrat', sans-serif; font-weight: 500; }
+			.desc h2 a:hover { color: #e74c3c; }
+			.price { color: #dddddd; }
+			.product-entry { background: #1e1e1e; }
+			.colorlib-partner h2 { color: #e74c3c; font-family: 'Dancing Script', cursive; }
+
+			/* Footer */
+			#colorlib-footer { background: #000000; color: #dddddd; }
+			#colorlib-footer h4 { color: #e74c3c; font-family: 'Dancing Script', cursive; }
+			.colorlib-footer-links a { color: #dddddd; }
+			.colorlib-footer-links a:hover { color: #e74c3c; }
+			.copy { color: #aaaaaa; }
+
+			/* Search */
+			.search-wrap .form-control { background: rgba(255,255,255,0.1); color: #ffffff; border: none; }
+			.submit-search { background: #e74c3c; }
+
+			/* Hero overlay */
+			.overlay { background: rgba(0,0,0,0.7); }
+			/* Glassmorphism cards */
+			.product-entry {
+				background: rgba(30, 30, 30, 0.6);  /* Dark semi-transparent */
+				backdrop-filter: blur(12px);  /* Frosted blur */
+				-webkit-backdrop-filter: blur(12px);  /* Safari */
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				border-radius: 15px;
+				overflow: hidden;
+				transition: all 0.3s ease;
+			}
+			.product-entry:hover {
+				background: rgba(30, 30, 30, 0.8);
+				transform: translateY(-8px);
+				box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+			}
+
+			/* Sharp content inside glass */
+			.prod-img img {
+				border-radius: 15px 15px 0 0;
+				transition: transform 0.3s ease;
+			}
+			.product-entry:hover .prod-img img {
+				transform: scale(1.05);
+			}
+			.desc {
+				padding: 20px;
+			}
+			.desc h2 a {
+				color: #ffffff;
+				font-size: 16px;
+				font-weight: 500;
+			}
+			.desc h2 a:hover {
+				color: #e74c3c;
+			}
+			.price {
+				color: #e74c3c;
+				font-size: 18px;
+				font-weight: bold;
+			}
+
+		</style>
 	</head>
 	<body>
 		
@@ -46,7 +144,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="index.html">Trendy Wear</a></div>
+							<div id="colorlib-logo"><a href="index.html"><img src="images/trendy-logo.jpg" alt="Trendy Wear Logo" style="height: 50px; margin-right: 12px; vertical-align: middle;"> Trendy Wear</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 			            <form action="#" class="search-wrap">
@@ -106,62 +204,93 @@
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(images/img_bg_1.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">Men's</h1>
-					   					<h2 class="head-2">Shoes</h2>
-					   					<h2 class="head-3">Collection</h2>
-					   					<p class="category"><span>New trending shoes</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(images/img_bg_2.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">Huge</h1>
-					   					<h2 class="head-2">Sale</h2>
-					   					<h2 class="head-3"><strong class="font-weight-bold">50%</strong> Off</h2>
-					   					<p class="category"><span>Big sale sandals</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(images/img_bg_3.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">New</h1>
-					   					<h2 class="head-2">Arrival</h2>
-					   					<h2 class="head-3">up to <strong class="font-weight-bold">30%</strong> off</h2>
-					   					<p class="category"><span>New stylish shoes for men</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			  	</ul>
-		  	</div>
+					<li style="background-image: url(images/slider-1.jpg);">
+						<div class="overlay"></div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-6 offset-sm-3 text-center slider-text">
+									<div class="slider-text-inner">
+										<div class="desc">
+											<h1 class="head-1">Everyday Fashion</h1>
+											<h2 class="head-2">Done Right</h2>
+											<p class="category"><span>Wear the vibes. Be the trend.</span></p>
+											<p><a href="men.html" class="btn btn-primary">Shop Men's</a> <a href="women.html" class="btn btn-primary">Shop Women's</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image: url(images/slider-2.jpg);">
+						<div class="overlay"></div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-6 offset-sm-3 text-center slider-text">
+									<div class="slider-text-inner">
+										<div class="desc">
+											<h1 class="head-1">New Arrivals</h1>
+											<h2 class="head-2">Just Dropped</h2>
+											<p class="category"><span>Fresh trendy sneakers & heels</span></p>
+											<p><a href="#" class="btn btn-primary">Shop Now</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image: url(images/slider-3.jpg);">
+						<div class="overlay"></div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-6 offset-sm-3 text-center slider-text">
+									<div class="slider-text-inner">
+										<div class="desc">
+											<h1 class="head-1">Vibrant Vibes</h1>
+											<h2 class="head-2">Every Day</h2>
+											<p class="category"><span>Colorful, bold & comfortable</span></p>
+											<p><a href="contact.html" class="btn btn-primary">Order Via WhatsApp</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image: url(images/slider-4.jpg);">
+						<div class="overlay"></div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-6 offset-sm-3 text-center slider-text">
+									<div class="slider-text-inner">
+										<div class="desc">
+											<h1 class="head-1">Step Into Style</h1>
+											<h2 class="head-2">Be the Trend</h2>
+											<p class="category"><span>Latest streetwear drops</span></p>
+											<p><a href="men.html" class="btn btn-primary">Men's Collection</a> <a href="women.html" class="btn btn-primary">Women's Collection</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image: url(images/slider-5.jpg);">
+						<div class="overlay"></div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-6 offset-sm-3 text-center slider-text">
+									<div class="slider-text-inner">
+										<div class="desc">
+											<h1 class="head-1">Summer Sale</h1>
+											<h2 class="head-2">Up to 30% Off</h2>
+											<p class="category"><span>Limited time only</span></p>
+											<p><a href="#" class="btn btn-primary">Grab the Deal</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</aside>
 		<div class="colorlib-intro">
 			<div class="container">
