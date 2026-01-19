@@ -202,8 +202,11 @@
 
 
 	var sliderMain = function() {
-		
-	  	$('#colorlib-hero .flexslider').flexslider({
+
+		if ( typeof $.fn.flexslider !== 'function' ) return;
+		if ( $('#colorlib-hero .flexslider').length === 0 ) return;
+
+		$('#colorlib-hero .flexslider').flexslider({
 			animation: "fade",
 			slideshowSpeed: 5000,
 			directionNav: true,
@@ -219,9 +222,7 @@
 					$('.flex-active-slide').find('.slider-text').addClass('animated fadeInUp');
 				}, 500);
 			}
-
-	  	});
-
+		});
 	};
 
 	// Owl Carousel

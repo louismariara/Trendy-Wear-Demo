@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>My Wishlist | Trendy Wear</title>
+        <title>Pet Collection | Trendy Wear</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,9 +19,6 @@
 
         <!-- Magnific Popup -->
         <link rel="stylesheet" href="css/magnific-popup.css">
-
-        <!-- Flexslider  -->
-        <link rel="stylesheet" href="css/flexslider.css">
 
         <!-- Owl Carousel -->
         <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -48,15 +45,13 @@
             #colorlib-logo a { color: #ffffff; font-family: 'Dancing Script', cursive; font-size: 28px; font-weight: 700; }
 
             /* Red buttons */
-            .btn-primary {
-                background: #e74c3c;
+            .btn-primary, .btn-outline-light {
                 border-color: #e74c3c;
                 color: #ffffff;
             }
-            .btn-primary:hover {
-                background: #c0392b;
-                border-color: #c0392b;
-            }
+            .btn-primary { background: #e74c3c; }
+            .btn-primary:hover { background: #c0392b; border-color: #c0392b; }
+            .btn-outline-light:hover { background: #e74c3c; color: #ffffff; }
 
             /* Sale bar */
             .sale { background: #000000; }
@@ -67,29 +62,32 @@
             a:hover { color: #ffffff; }
 
             /* High contrast text */
-            .colorlib-product, #colorlib-footer {
-                color: #ffffff;
-            }
+            .colorlib-product, #colorlib-footer { color: #ffffff; }
             .colorlib-heading h2 { color: #e74c3c; font-family: 'Dancing Script', cursive; font-weight: 600; }
 
-            /* Wishlist table styling */
-            .product-cart { background: #1e1e1e; border-radius: 15px; margin-bottom: 20px; padding: 15px; }
-            .product-img { height: 120px; background-size: cover; border-radius: 10px; }
-            .display-tc h3 { color: #ffffff; font-size: 18px; }
-            .price { color: #e74c3c; font-weight: bold; }
-
-            /* Glassmorphism for shop more cards */
+            /* Glassmorphism cards */
             .product-entry {
                 background: rgba(30, 30, 30, 0.6);
                 backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
                 border: 1px solid rgba(255, 255, 255, 0.08);
                 border-radius: 15px;
+                overflow: hidden;
                 transition: all 0.3s ease;
             }
             .product-entry:hover {
+                background: rgba(30, 30, 30, 0.8);
                 transform: translateY(-8px);
-                box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
             }
+            .prod-img img {
+                border-radius: 15px 15px 0 0;
+                transition: transform 0.3s ease;
+            }
+            .product-entry:hover .prod-img img {
+                transform: scale(1.05);
+            }
+            .desc { padding: 20px; }
 
             /* Footer */
             #colorlib-footer { background: #000000; color: #dddddd; padding-top: 80px; }
@@ -101,6 +99,9 @@
             /* Search */
             .search-wrap .form-control { background: rgba(255,255,255,0.1); color: #ffffff; border: none; }
             .submit-search { background: #e74c3c; }
+
+            /* Breadcrumbs & banner */
+            .breadcrumbs-two .breadcrumbs-img h2 { font-family: 'Dancing Script', cursive; color: #e74c3c; font-size: 60px; }
         </style>
     </head>
     <body>
@@ -114,8 +115,10 @@
                             <div class="col-sm-7 col-md-9">
                                 <div id="colorlib-logo"><a href="index.html"><img src="images/trendy-logo.jpg" alt="Trendy Wear Logo" style="height: 50px; margin-right: 12px; vertical-align: middle;"> Trendy Wear</a></div>
                             </div>
-                            <div class="col-sm-5 col-md-3">
-                                <form action="#" class="search-wrap">
+                            <div class="col-sm-5 col-md-3 text-right">
+                                <a href="login.html" class="btn btn-outline-light btn-sm mr-2">Login</a>
+                                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                                <form action="#" class="search-wrap mt-2">
                                     <div class="form-group">
                                         <input type="search" class="form-control search" placeholder="Search">
                                         <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
@@ -124,25 +127,24 @@
                             </div>
                         </div>
                         <div class="row">
-								<div class="col-sm-12 text-left menu-1">
-									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li><a href="men.html">Men</a></li>
-										<li><a href="women.html">Women</a></li>
-										<li><a href="pet.html">Pet</a></li>
-										<li><a href="about.html">About</a></li>
-										<li class="has-dropdown">
-											<a href="#">More <i class="ion-ios-arrow-down" style="font-size: 14px; margin-left: 5px;"></i></a>
-											<ul class="dropdown">
-												<li><a href="product-detail.html">Product Detail</a></li>
-												<li><a href="cart.html">Shopping Cart</a></li>
-												<li><a href="checkout.html">Checkout</a></li>
-												<li><a href="order-complete.html">Order Complete</a></li>
-												<li><a href="add-to-wishlist.html">Wishlist</a></li>
-											</ul>
-										</li>
-										<li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
-									</ul>
+                            <div class="col-sm-12 text-left menu-1">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li class="has-dropdown">
+                                        <a href="men.html">Men</a>
+                                        <ul class="dropdown">
+                                            <li><a href="product-detail.html">Product Detail</a></li>
+                                            <li><a href="cart.html">Shopping Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="order-complete.html">Order Complete</a></li>
+                                            <li><a href="add-to-wishlist.html">Wishlist</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="women.html">Women</a></li>
+                                    <li class="active"><a href="pet.html">Pet</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -180,7 +182,22 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <p class="bread"><span><a href="index.html">Home</a></span> / <span>My Wishlist</span></p>
+                            <p class="bread"><span><a href="index.html">Home</a></span> / <span>Pet Collection</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breadcrumbs-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="breadcrumbs-img" style="background-image: url(https://i.ebayimg.com/images/g/i10AAOSwwpJjB~CE/s-l1200.jpg);">
+                                <h2>Pet Collection - Dog Vests</h2>
+                            </div>
+                            <div class="menu text-center">
+                                <p><a href="#">New Arrivals</a> <a href="#">Best Sellers</a> <a href="#">Safety Vests</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -188,157 +205,76 @@
 
             <div class="colorlib-product">
                 <div class="container">
-                    <div class="row row-pb-lg">
-                        <div class="col-md-10 offset-md-1">
-                            <div class="process-wrap">
-                                <div class="process text-center active">
-                                    <p><span>01</span></p>
-                                    <h3>Shopping Cart</h3>
-                                </div>
-                                <div class="process text-center">
-                                    <p><span>02</span></p>
-                                    <h3>Checkout</h3>
-                                </div>
-                                <div class="process text-center">
-                                    <p><span>03</span></p>
-                                    <h3>Order Complete</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-pb-lg">
-                        <div class="col-md-12">
-                            <div class="product-name d-flex" style="background: #1e1e1e; padding: 15px; border-radius: 10px;">
-                                <div class="one-forth text-left px-4">
-                                    <span>Product Details</span>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <span>Price</span>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <span>Quantity</span>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <span>Total</span>
-                                </div>
-                                <div class="one-eight text-center px-4">
-                                    <span>Remove</span>
-                                </div>
-                            </div>
-
-                            <!-- Example wishlist items – add more as needed -->
-                            <div class="product-cart d-flex" style="background: #1e1e1e; border-radius: 15px; margin: 15px 0; padding: 20px;">
-                                <div class="one-forth">
-                                    <div class="product-img" style="background-image: url(images/item-6.jpg);"></div>
-                                    <div class="display-tc">
-                                        <h3>Chrome Hearts T-Shirt</h3>
-                                    </div>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <span class="price">KSh 1,300</span>
-                                    </div>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <input type="number" class="form-control input-number text-center" value="1" min="1" max="100">
-                                    </div>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <span class="price">KSh 1,300</span>
-                                    </div>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <a href="#" class="closed" style="color: #e74c3c; font-size: 24px;">×</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product-cart d-flex" style="background: #1e1e1e; border-radius: 15px; margin: 15px 0; padding: 20px;">
-                                <div class="one-forth">
-                                    <div class="product-img" style="background-image: url(images/item-7.jpg);"></div>
-                                    <div class="display-tc">
-                                        <h3>Supreme Vanson Leather Star Jacket</h3>
-                                    </div>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <span class="price">KSh 7,000</span>
-                                    </div>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <input type="number" class="form-control input-number text-center" value="1" min="1" max="100">
-                                    </div>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <span class="price">KSh 7,000</span>
-                                    </div>
-                                </div>
-                                <div class="one-eight text-center">
-                                    <div class="display-tc">
-                                        <a href="#" class="closed" style="color: #e74c3c; font-size: 24px;">×</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Add more wishlist items here if needed -->
-                        </div>
-                    </div>
-
-                    <!-- Shop more section with glass cards -->
                     <div class="row">
-                        <div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
-                            <h2>Shop More</h2>
+                        <div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
+                            <h2>Dog Vests</h2>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3 mb-4 text-center">
+                    <div class="row row-pb-md justify-content-center">
+                        <div class="col-lg-4 mb-4 text-center">
                             <div class="product-entry border">
                                 <a href="#" class="prod-img">
-                                    <img src="images/item-1.jpg" class="img-fluid" alt="Gucci Clog">
+                                    <img src="https://i.ebayimg.com/images/g/i10AAOSwwpJjB~CE/s-l1200.jpg" class="img-fluid" alt="Camo Tactical Dog Vest">
                                 </a>
                                 <div class="desc">
-                                    <h2><a href="#">Gucci Clog</a></h2>
+                                    <h2><a href="#">Camo Tactical Dog Vest</a></h2>
+                                    <p>Heavy-duty camouflage vest with hook/loop closure – perfect for outdoor adventures.</p>
+                                    <span class="price">KSh 2,800</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4 text-center">
+                            <div class="product-entry border">
+                                <a href="#" class="prod-img">
+                                    <img src="https://i.etsystatic.com/23602060/r/il/713867/3782068464/il_fullxfull.3782068464_b8je.jpg" class="img-fluid" alt="Blaze Orange Camo Safety Vest">
+                                </a>
+                                <div class="desc">
+                                    <h2><a href="#">Blaze Orange Camo Safety Vest</a></h2>
+                                    <p>High-visibility neoprene vest for hunting/training – keeps your dog safe and seen.</p>
+                                    <span class="price">KSh 2,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4 text-center">
+                            <div class="product-entry border">
+                                <a href="#" class="prod-img">
+                                    <img src="https://image.made-in-china.com/365f3j00qAelnOVhyzbD/Custom-Green-Khaki-Waterproof-Dog-Vest-Harness-Set-Heavy-Duty-Tactical-Eco-Friendly-Pet-Harness-with-Storage-Bag.webp" class="img-fluid" alt="Khaki Waterproof Tactical Vest">
+                                </a>
+                                <div class="desc">
+                                    <h2><a href="#">Khaki Waterproof Tactical Vest</a></h2>
+                                    <p>Eco-friendly heavy-duty harness with storage bag – ideal for active dogs.</p>
+                                    <span class="price">KSh 3,200</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4 text-center">
+                            <div class="product-entry border">
+                                <a href="#" class="prod-img">
+                                    <img src="https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/s/27/e91dc271-f96d-4fe4-b975-e115f8eb942f.jpg" class="img-fluid" alt="Reversible Reflective Dog Vest">
+                                </a>
+                                <div class="desc">
+                                    <h2><a href="#">Reversible Reflective Dog Vest</a></h2>
+                                    <p>Orange & camo reversible with reflective strips – great for night walks.</p>
                                     <span class="price">KSh 3,000</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-lg-3 mb-4 text-center">
+                        <div class="col-lg-4 mb-4 text-center">
                             <div class="product-entry border">
                                 <a href="#" class="prod-img">
-                                    <img src="images/item-2.jpg" class="img-fluid" alt="Nike Nocta">
+                                    <img src="https://i.ebayimg.com/images/g/GVQAAOSwFh5mP3Ic/s-l1200.jpg" class="img-fluid" alt="Camo Service Dog Harness Vest">
                                 </a>
                                 <div class="desc">
-                                    <h2><a href="#">Nike Nocta</a></h2>
-                                    <span class="price">KSh 4,500</span>
+                                    <h2><a href="#">Camo Service Dog Harness Vest</a></h2>
+                                    <p>Comfortable camo vest for service/emotional support dogs – durable and stylish.</p>
+                                    <span class="price">KSh 2,900</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-lg-3 mb-4 text-center">
-                            <div class="product-entry border">
-                                <a href="#" class="prod-img">
-                                    <img src="images/item-3.jpg" class="img-fluid" alt="Puma Pace">
-                                </a>
-                                <div class="desc">
-                                    <h2><a href="#">Puma Pace</a></h2>
-                                    <span class="price">KSh 3,500</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-lg-3 mb-4 text-center">
-                            <div class="product-entry border">
-                                <a href="#" class="prod-img">
-                                    <img src="images/item-4.jpg" class="img-fluid" alt="Timberlands">
-                                </a>
-                                <div class="desc">
-                                    <h2><a href="#">Timberlands</a></h2>
-                                    <span class="price">KSh 5,500</span>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p><a href="index.html" class="btn btn-primary">Back to Home</a></p>
                         </div>
                     </div>
                 </div>
@@ -354,8 +290,7 @@
                                 <ul class="colorlib-social-icons">
                                     <li><a href="#"><i class="icon-twitter"></i></a></li>
                                     <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="icon-instagram"></i></a></li>
                                 </ul>
                             </p>
                         </div>
@@ -386,13 +321,17 @@
         <div class="gototop js-top">
             <a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
         </div>
-        
+
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.waypoints.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
